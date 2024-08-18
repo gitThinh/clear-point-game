@@ -78,7 +78,7 @@ const GameContainer = () => {
   };
 
   useEffect(() => {
-    if (circles.length === 0 && circlesCount !== 0) {
+    if (circles.length === 0 && gameState === "playing") {
       setIsPlaying(false)
       setGameState("win")
     }
@@ -101,6 +101,7 @@ const GameContainer = () => {
   };
 
   const renderTilte = () => {
+    console.log(gameState);
     switch (gameState) {
       case "win": 
         return <h1 className="text-3xl font-bold mb-4 text-green-500">ALL CLEARED</h1>
